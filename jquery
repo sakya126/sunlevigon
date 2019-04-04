@@ -1,0 +1,37 @@
+<!-- Cretaing the table rows dynamically for the value given in textbox -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $(function() { // on page load
+    var no_rows = $('input[name=row]').val();
+    $("#row").bind("input", function(e) { // assign submi handler
+      if ($('#row').val() != no_rows) {
+        no_rows = $('#row').val();
+      }
+
+      var html = "";
+      for (var i = 1; i <= no_rows; i += 1) {
+      html += "<tr><td>" + i + "</td><td>" +"<input type='text' name='legth["+[i]+"]'  />" + "<input type='text' name='width["+[i]+"]'  />" +"<input type='text' name='height["+[i]+"]'  />" + "</td><td>" + "<input type='text' name='weight["+[i]+"]'  />" + "</td></tr>";
+    }
+    document.getElementById("table1").innerHTML = html;
+    });
+  });
+</script>
+
+<style>
+  #table1 { background: gray; }
+  td { border: 1px solid black; text-align:center; color:white; font-weight:bold; }
+</style>
+</head>
+<body>
+
+  <input type="text" name="row" id="row">
+  
+  <table id="table1">
+    
+</table>
+</body>
+</html>
