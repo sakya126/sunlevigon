@@ -1,0 +1,88 @@
+<!-- Multiple Owl Caraousel -->
+
+//Caraosel 1
+<div class="owl-two owl-carousel owl-theme">
+  <div class="item">
+    <img src="images/event-1.jpg" class="img-responsive">
+  </div>
+  <div class="item">
+    <img src="images/event-2.jpg" class="img-responsive">
+  </div>
+  <div class="item">
+    <img src="images/event-3.jpg" class="img-responsive">
+	</div>
+</div>
+
+//Caraousel 2
+<div class="owl-carousel owl-theme owl-one">
+  <div class="item">
+    <img src="slider/img1.jpg" class="img-responsive">
+  </div>
+  
+  <div class="item">
+    <img src="slider/img2.jpg" class="img-responsive">
+  </div>
+  
+	<div class="item">
+	 <img src="slider/img3.jpg" class="img-responsive">
+  </div>
+  
+  <div class="item">
+    <img src="slider/img4.jpg" class="img-responsive">
+  </div>
+</div>
+
+//Caraousel 1 JS
+<script>
+            $(document).ready(function() {
+              $('.owl-one').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                  0: {
+                    items: 1,
+                    nav: true
+                  },
+                  600: {
+                    items: 3,
+                    nav: false
+                  },
+                  1000: {
+                    items: 3,
+                    nav: false,
+                    loop: true,
+                    margin: 20
+                  }
+                }
+              })
+            })
+    </script>
+    
+    //Caraousel 2 JS
+    <script>
+            $(document).ready(function() {
+              $('.owl-two').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                  0: {
+                    items: 1,
+                    nav: true
+                  },
+                  600: {
+                    items: 1,
+                    nav: false
+                  },
+                  1000: {
+                    items: 1,
+                    nav: false,
+                    loop: true,
+                    margin: 20
+                  }
+                }
+              })
+            })
+    </script>
+    
