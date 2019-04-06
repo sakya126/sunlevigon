@@ -35,3 +35,46 @@
 </table>
 </body>
 </html>
+
+<!-- Collapsible Tab -->
+ <div class="row">
+      			<div class="col-md-12">
+      				<div class="terms-content">
+      					<button class="collapsible">Terms & Conditions</button>
+						<div class="content">
+						  <p>To purchase tickets, please read all the Terms and Conditions. Raj Khanna Pty Ltd or (www.bollywoodclub.com.au) may, without prior written notice, invalidate any tickets that are believed to be in breach of these terms and conditions, and no refund, replacement or compensation will be offered.</p>
+						  <p>1) Photo Id Essential: Australian Driver License or Passport Only. This is an 18+ event. You will be asked to present a legal form of identification at the event entry, such as a current Australian driver’s license (international driver’s licenses won’t be accepted), ’RTA Proof Of Age’ card or valid Passport Only. No other form of identification or any photocopies will be accepted at the entry.</p>
+						  <p>2) Tickets for events are issued only via password to Bollywood Club members. If you have purchased ticket/s without receiving valid approval (for your full name) & password directly from Bollywood Club (info@bollywoodclub.com.au), your ticket may be cancelled without refund and the bearer of the ticket may be refused admission.</p>
+						  <p>3) No refunds or exchanges on any ticket except as required by and/or specified by the Live Performance Australia Industry Code of Practice. Incorrect purchases are NOT guaranteed a refund and are at the discretion of the event organizer.</p>
+						  <p>4) Your bar-coded print out ticket is your ticket to the event; this must be presented at the gate to gain entry. Your ticket will be emailed to the email address specified during booking as a PDF attachment once your card has been successfully charged pr payment in other forms received. If you are unable to print your ticket(s) or do not receive your ticket(s) please email us on info@bollywoodclub.com.au with full name/s and type of ticket and we shall resend the same to you.</p>
+						  <p>5) At the point of entry, the ticket presented must match the FULL NAME AND DATE OF BIRTH specified in the booking history and you will be asked to present a CURRENT matching driver’s license, “RTA Proof of Age” card or Passport that matches this information</p>
+						  <p>6) Please ensure your ticket is kept in a secure place like money as the ticket can only be validated once. If used, the ticket will become void. Please be cautious that your email is not forwarded to anyone. Each ticket will be emailed as separate PDF tickets.</p>
+						  <p>7) The event organizer reserves the right to withdraw, reschedule or substitute artist/s and/or vary advertised prices, event times and inclusions without notice. The event organizer reserves the right to admission and to enforce the Venue Entry Conditions.</p>
+						  <p>8) It is a condition of sale that tickets may not be offered for unauthorized resale, on 3rd party websites such as Ebay or Gumtree. Tickets may not be resold or offered for resale on (including online auction sites) or used for advertising, promotion or other commercial purposes. If a ticket is used in breach of these conditions, it may be cancelled without refund and the bearer of the ticket may be refused admission.</p>
+						  <p>9) Management reserves the right to refuse entry to any person considered unsuitably attired or intoxicated. The following dress code is considered unacceptable: Ripped, torn or soiled clothing T-shirts with offensive designs/words Flannelette shirts Camouflage clothing Male singlets and tank-tops “Hoodies” (hooded jumpers or t-shirts) Shorts Active sporting attire and active sports shoes (including branded urban wear) Excessively revealing clothing Manual work clothing or boots (including all steel cap boots) Fancy dress, hats, caps or bandannas (exemptions apply for specific events and functions) Thongs, sneakers, high tops, joggers, runners, beach sandals, massage sandals, unclean or untidy footwear The dress standard for Bollywood Club is neat and smart; guests must be clean, neat and tidy at all times.</p>
+						  <p>10) The attendance in the events would imply consent of the guest to the organizers or their representatives to take still or moving photographs or other recordings of the guests, or of his property (including any photographs or film footage that he/she may provide) during and in connection with the event in which he/she is attending.</p>
+						  <p>11) The guests also consent to the organizers or their representatives having an irrevocable license to use and reproduce, in whole or in part, the contents of the Footage, image, voice, appearance, or that of his/her property in connection with the event in which he/she is participating and the production and exploitation thereof, in any and all manners and media, throughout the world, in perpetuity, for promotional and public relations purposes via  videos, publications, news releases, websites, including social media, and any promotional material in any other medium.</p>
+						  <p>12) The guest grants permission to all the foregoing parties to use any photographs, motion pictures, recordings, or any other record of this event for any legitimate purpose.</p>
+						  <p>13) Tickets for this event will be allotted to Couples and Female only.  Male Stags are not allowed.</p>
+						  <p>14) All tickets are inclusive of GST. All tickets and products are priced in Australian dollars</p>
+						</div>
+      				</div>
+      			</div>
+			</div> 
+      
+<script>
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+		  coll[i].addEventListener("click", function() {
+		    this.classList.toggle("active");
+		    var content = this.nextElementSibling;
+		    if (content.style.maxHeight){
+		      content.style.maxHeight = null;
+		    } else {
+		      content.style.maxHeight = content.scrollHeight + "px";
+		    } 
+		  });
+		}
+	</script>
