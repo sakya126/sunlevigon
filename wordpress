@@ -14,3 +14,161 @@
 
 <!-- Screenshot Size --->
 880p x 660px 
+
+<!-- Using Option Tree Show Video and Image in a Owl Caraousel Slider. Here we've taken the help of checkbox function of option tree -->
+
+//Meta Box Code
+<?php
+/**
+ * Initialize the custom Meta Boxes. 
+ */
+add_action( 'admin_init', 'bn_meta_boxes' );
+
+/**
+ * Meta Boxes demo code.
+ *
+ * You can find all the available option types in demo-theme-options.php.
+ *
+ * @return    void
+ * @since     2.0
+ */
+
+function bn_meta_boxes() {
+
+   $home_meta_box = array(
+    'id'          => 'home_meta_box',
+    'title'       => __( 'Event Details Setting', 'theme-text-domain' ),
+    'desc'        => '',
+    'pages'       => array( 'page' ),
+    'context'     => 'normal',
+    'priority'    => 'high',
+    'fields'      => array(
+      array(
+        'label'       => __( 'Event Content Section Background Color', 'theme-text-domain' ),
+        'id'          => 'event_content_bg',
+        'type'        => 'colorpicker',
+        'std'         => '#aeaeae'
+      ),
+      array(
+        'label'       => __( 'Event Date', 'theme-text-domain' ),
+        'id'          => 'event_date',
+        'type'        => 'date-picker'
+      ),
+      array(
+        'label'       => __( 'Event Venue', 'theme-text-domain' ),
+        'id'          => 'event_venue',
+        'type'        => 'text',
+      ),
+      array(
+        'label'       => __( 'Event Title Color', 'theme-text-domain' ),
+        'id'          => 'event_title_color',
+        'type'        => 'colorpicker',
+        'std'         => '#363a3d'
+      ),
+      array(
+        'label'       => __( 'Date Icon Color', 'theme-text-domain' ),
+        'id'          => 'date_icon_color',
+        'type'        => 'colorpicker',
+        'std'         => '#363a3d'
+      ),
+      array(
+        'label'       => __( 'Date Text Color', 'theme-text-domain' ),
+        'id'          => 'date_text_color',
+        'type'        => 'colorpicker',
+        'std'         => '#363a3d'
+      ),
+      array(
+        'label'       => __( 'Venue Icon Color', 'theme-text-domain' ),
+        'id'          => 'venue_icon_color',
+        'type'        => 'colorpicker',
+        'std'         => '#363a3d'
+      ),
+      array(
+        'label'       => __( 'Venue Text Color', 'theme-text-domain' ),
+        'id'          => 'venue_text_color',
+        'type'        => 'colorpicker',
+        'std'         => '#363a3d'
+      ),
+      array(
+        'label'       => __( 'Form Background Color', 'theme-text-domain' ),
+        'id'          => 'form_bg_color',
+        'type'        => 'colorpicker',
+        'std'         => '#c30e2e'
+      ),
+      array(
+        'label'       => 'Gallery',
+        'id'          => 'gallery',
+        'type'        => 'list-item',
+        'settings'    => array(
+          array(
+            'label'     => 'Image',
+            'id'        => 'gallery_img',
+            'type'      => 'upload',
+            'desc'      => 'Upload the image with the following dimension - 400 x 400'
+          ),
+          array(
+            'label'     => 'Video',
+            'id'        => 'gallery_video',
+            'type'      => 'text',
+            'desc'      => 'Give the URL of the video. Get it from the embedoption of the video. Take only the URL'
+          ),
+          array(
+           'label'       => 'Gallery Video Checkbox',
+           'id'          => 'gallery_video_chkbox', 
+           'type'        => 'checkbox',
+           'choices'    => array(
+              array(
+                'value'       => 'Yes',
+                'label'       => __( 'Yes', 'text-domain' ),
+              )
+          ), 
+        ), 
+      ),
+    ),
+
+    )
+  );
+  
+  /**
+   * Register our meta boxes using the 
+   * ot_register_meta_box() function.
+   */
+  if ( function_exists( 'ot_register_meta_box' ) )
+    ot_register_meta_box( $home_meta_box );
+
+}
+
+
+//Owl Caraousel Section
+
+<section class="event-slider">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-md-12">
+  					<div class="owl-carousel owl-theme owl-one">
+                <?php if(have_posts()) : ?>
+                  <?php while(have_posts()) : the_post(); ?>
+                    <?php
+                      $galleries = get_post_meta(get_the_ID(), 'gallery', true);
+                        if(is_array($galleries)){
+                          foreach ($galleries as  $gallery ){
+                      ?>
+                      <?php if ($gallery['gallery_video_chkbox'][0] == 'Yes'){ ?> 
+            			<div class="item-video">
+              				<iframe width="100%" height="355" src="<?php echo $gallery['gallery_video']; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            			</div>
+                      <?php } else { ?>
+			            <div class="item">
+			             	<img src="<?php echo $gallery['gallery_img']; ?>" class="img-responsive">
+			            </div>
+                      <?php } ?>
+                        <?php } }?>
+                      <?php endwhile; ?>
+                    <?php endif; ?>
+			           
+          	</div>	
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+
