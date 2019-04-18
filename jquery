@@ -82,3 +82,8 @@
 	
 <!-- Warning Before Delete & Edit -->
 onclick="return confirm('Are you sure you want to delete this item?');"
+
+<!-- Error Message Using JS -->
+echo '<script language="javascript">';
+echo 'alert("Sorry, there was an error uploading your file")';
+echo '</script>';
