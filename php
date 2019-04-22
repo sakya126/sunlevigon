@@ -360,3 +360,16 @@
 	$home_url = '../index.php';
 	header('Location: ' . $home_url);
     ?>
+    
+   <!-- Not Logged In Page Redirect -->
+   <?php
+   	$login_id = $_SESSION['user'];
+
+    	if(!isset($login_id)){
+
+        	//not logged in
+        	header('Location: ../index.php');
+        	exit();
+   	 }	
+   <?
+
