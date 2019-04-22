@@ -87,3 +87,14 @@ onclick="return confirm('Are you sure you want to delete this item?');"
 echo '<script language="javascript">';
 echo 'alert("Sorry, there was an error uploading your file")';
 echo '</script>';
+
+<!-- Prevent Enter in textarea -->
+<script>
+    	$('.track_no').bind('keypress', function(e) {
+		  if ((e.keyCode || e.which) == 13) {
+		    //$(this).parents('form').submit();
+		    alert('Do not press enter. Give the Tracking Numbers with space');
+		    return false;
+		  }
+		});
+    </script>
