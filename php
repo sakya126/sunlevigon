@@ -350,3 +350,13 @@
 
     <?php include('../inc/footer.php'); ?>
     <?php } ?>
+    
+    
+    <!-- Logout Script -->
+    <?php
+	session_start();
+	session_destroy();
+	//$home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) .'/index.php';
+	$home_url = '../index.php';
+	header('Location: ' . $home_url);
+    ?>
