@@ -1,3 +1,7 @@
 //Composer Installation
 https://getcomposer.org/download/
+First create a directory named Laravel
 composer create-project –-prefer-dist laravel/laravel test 
+Go to the Laravel directory
+php artisan serve
+If you want to change the prt number then php artisan serve --port=9000
