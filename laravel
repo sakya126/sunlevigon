@@ -1,0 +1,3 @@
+//Composer Installation
+https://getcomposer.org/download/
+composer create-project –-prefer-dist laravel/laravel test 
