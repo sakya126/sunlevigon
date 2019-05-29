@@ -98,3 +98,27 @@ echo '</script>';
 		  }
 		});
     </script>
+    
+<!-- Scroll Nav background Color Change-->
+<script type="text/javascript">
+	$(function () {
+  		$(document).scroll(function () {
+	  		var $nav = $(".header-bar");
+	  		$nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+		});
+	});
+</script>
+<div class="header-bar"></div>
+.header-bar {
+    padding: 2em 0em;
+    background-color: #009fb4;
+    position: fixed;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.header-bar.scrolled {
+  background-color: #009fb4 !important;
+  transition: background-color 200ms linear;
+  opacity: 1.0;
+}
